@@ -6,7 +6,7 @@
         <input type="text" v-model="searchQuery">
         <button class="clear-search" @click="searchQuery = ''">X</button>
       </div>
-      <ul class="users-list">
+      <ul class="movies-list">
         <ContentScroll @load-more="handleLoadMore">
           <MovieListItem 
               v-if="!isFetching" 
@@ -52,12 +52,12 @@
     }
   };
 
-  const handleMovie = (user: any) => {
-    router.push('/movie/' + user.id);
+  const handleMovie = (movie: any) => {
+    router.push('/movie/' + movie.id);
   };
 
   const handleMovieDelete = () => {
-    moviesList.value = moviesList.value.filter((user: any) => user.id !== user.id);
+    moviesList.value = moviesList.value.filter((movie: any) => movie.id !== movie.id);
   };
 
   watch(searchQuery, () => {

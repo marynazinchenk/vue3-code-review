@@ -4,7 +4,7 @@ import API from '@/api';
 
 import { Movie } from '../components/types/Movie';
 
-const state = reactive<Movie[]>([]);
+const state = ref<Movie[]>([]);
 const isFetching = ref<boolean>(false);
 const page = reactive<number>(1);
 
